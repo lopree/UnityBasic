@@ -17,7 +17,7 @@
 + `环境光(ambient)`,C<sub>ambient</sub>
 
 ## 渲染路径
->Pass通道里面的`LightMode`为`ForwardBase(前向渲染路径)`,`ForwardBase(前向渲染路径)有三种处理光照的方式
+>Pass通道里面的`LightMode`为`ForwardBase(前向渲染路径)`,ForwardBase(前向渲染路径)有三种处理光照的方式
 + `逐顶点处理`
 + `逐像素处理`
 + `球谐函数`
@@ -33,4 +33,3 @@
 ## 凹凸映射
 ## 渐变纹理
 ## 遮罩纹理
-
