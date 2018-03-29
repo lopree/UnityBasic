@@ -1,5 +1,10 @@
 ﻿<Properties StartupConfiguration="{91140D89-60D5-5873-8261-F5B705679982}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/IControl.cs">
+    <Files>
+      <File FileName="Assets/Scripts/FirstScr.cs" Line="56" Column="29" />
+      <File FileName="Assets/Scripts/IControl.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
