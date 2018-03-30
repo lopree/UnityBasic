@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FirstScr.cs" />
     <Compile Include="Assets\Scripts\IControl.cs" />
+    <Compile Include="Assets\Scripts\PoolManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
