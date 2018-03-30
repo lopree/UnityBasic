@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{91140D89-60D5-5873-8261-F5B705679982}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PoolManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/IControl.cs">
     <Files>
       <File FileName="Assets/Scripts/FirstScr.cs" Line="96" Column="35" />
       <File FileName="Assets/Scripts/IControl.cs" Line="13" Column="20" />
