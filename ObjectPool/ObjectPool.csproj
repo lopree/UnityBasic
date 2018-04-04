@@ -100,9 +100,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPath.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathAnimator.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathControlPoint.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathDelay.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathDelayList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathEvent.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathEventList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathFOV.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathFOVList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathOrientation.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathOrientationList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathPoint.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathPointList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathSpeed.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathSpeedList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathTilt.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\CameraPathTiltList.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\Enum\CameraPathColours.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\Util\CPMath.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\Util\CameraDeAlpha.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\Util\CameraPathPreviewSupport.cs" />
+    <Compile Include="Assets\CameraPath3\Scripts\Util\XMLVariableConverter.cs" />
     <Compile Include="Assets\Scripts\FirstScr.cs" />
     <Compile Include="Assets\Scripts\IControl.cs" />
+    <Compile Include="Assets\Scripts\NoMouse.cs" />
     <Compile Include="Assets\Scripts\PoolManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Allsky\allsky_readme.txt" />
+    <None Include="Assets\CameraPath3\3.1x Upgrade readme.txt" />
+    <None Include="Assets\CameraPath3\readme.txt" />
+    <None Include="Assets\CameraPath3\versionHistory.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
