@@ -56,3 +56,6 @@
 1. 选中所有骨骼，clear poisition
 2. 选中骨骼和模型，Ctrl+Shift+P链接骨骼模型
 3. 制作帧动画
+
+### 导出人物动画
+> 选中骨骼和mesh，导出时左侧的Version选`FBX 6.1 ASCII`,同时按住shift可单独选择要额外导出的东西。在Path Mode中选择`Copy`。
