@@ -53,7 +53,7 @@
 
 
 ## 人物动画
-1. 选中所有骨骼，clear poisition
+1. 选中所有骨骼，clear position
 2. 选中骨骼和模型，Ctrl+Shift+P链接骨骼模型
 3. 制作帧动画
 
