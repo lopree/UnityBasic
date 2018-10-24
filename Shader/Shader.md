@@ -1,6 +1,9 @@
+# 版本变化
+> Unity 2017 变化
+  + 使用内置的UnityObjectToViewPos(*)函数来代替mul(UNITY_MATRIX_MV, *)对顶点进行变换。
+> Unity 5.X
+  + 矩阵变化：_Object2World被替换成了unity_ObjectToWorld，_World2Object被替换成了unity_WorldToObject（均在UnityShaderVariables.cginc文件中被声明），_LightMatrix0被替换成了unity_WorldToLight（在AutoLight.cginc文件中被声明）。
 # Shader分类
->主要参考的博客[猫都能学会的Unity Shader入门指南](https://onevcat.com/2013/07/shader-tutorial-1/)以及书籍`《Unity Shader入门精要》`
-
 1. 固定管线着色器(Fixed Function Shader)
   + 由于大多数GPU支持可编程渲染管线,这种固定关心啊的编程方式被逐渐抛弃
 2. 顶点/片段着色器(Vertex/Fragment Shader)
