@@ -28,23 +28,37 @@
 # Why
 >Shader，整个渲染流程的子部分，可以把物体按照自己的意愿渲染到屏幕上。
 # Unity Shader分类
-> Unity Shader是对渲染流程的再次封装后提供的图像编程接口
+> Unity Shader是对渲染流程的再次封装后提供的图像编程接口.
 1. 固定管线着色器(Fixed Function Shader)
   + 由于大多数GPU支持可编程渲染管线,这种固定关心啊的编程方式被逐渐抛弃
 2. 顶点/片段着色器(Vertex/Fragment Shader)
   + 因为适用范围广,使用CG/HLSL语言编写,被大量采用
 3. 表面着色器(Surface Shader)
-  + unity自己创建的一种着色代码类型,代码量少但是渲染压力大.本质上是对顶点/片段着色器的更高一级抽象
+  + unity自己创建的一种着色代码类型,代码量少但是渲染压力大.本质上是对顶点/片段着色器的更高一级抽象,但是为我们处理了很多光照细节。
+## 顶点着色器
+## 片元着色器
+## 详解
+>在Unity中开发者使用ShaderLab编写Unity Shader。<br>
+>因为表面着色器的本质依然是`顶点/片段着色器`,因此主要详细解释顶点/片段中的参数
 
 Shader程序的基本结构:<br>
 ![](https://onevcat.com/assets/images/2013/shader-structure.png)
 
-## 顶点着色器
-## 片元着色器
-### 详解
->因为表面着色器的本质依然是`顶点/片段着色器`,因此主要详细解释顶点/片段中的参数
-
+每个Shader可以有多个子着色器（Subshader）为了适应各种平台, **但是每个Subshader要尽量少的Pass。**
 #### 属性
 在`Properties{}`中定义着色器属性，在这里定义的属性将被`作为输入提供给所有的子着色器`。每一条属性的定义的语法是这样的：
 
-```_Name("Display Name", type) = defaultValue[{options}]```
+```_Name("Display Name", Propertytype) = defaultValue[{options}]```
+
++ _Name: **名字**，通常由下划线开始，可以在shader中访问。
++ Display Name: **显示名字**，在材质面板中可以显示调节这个属性。
++ Propertytype: **属性类型**，每个属性都要规定类型，并赋予默认值
+![](http://ov443bcri.bkt.clouddn.com/Shader%E5%B1%9E%E6%80%A7.png)
+
+#### Pass通道
+镶嵌在**CGPROGRAM**和**ENDCG**之间，这两个代表在Unity Shader中使用CG/HLSL的语法。
+```
+#pragma vertex name
+#pragma fragment name
+```
+>定义顶点/片段的函数名字，一般以vert/frag代表。
