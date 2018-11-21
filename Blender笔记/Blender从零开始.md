@@ -3,7 +3,6 @@
 
 |按键|作用
 |:--|:--
-|.|点选面板中的物体，在3D视窗下按 `.` 将直接定位到3D物体处
 |Alt + Ctrl + 0|将摄像机的位置放置到当前视角的位置
 |shift+D|复制
 |Ctrl+R|环切线
@@ -59,12 +58,12 @@
 2. 在 Dope Sheet 动画表单编辑器的 Dope Sheet 动画表单模式下；
 3. 在 Dope Sheet 动画表单编辑器的 Action Editor 动作编辑器模式下。
 4. 在 NLA 非线性动画编辑器，点击“雪花”按钮后，关键帧被应用为整条动画，可拖动。可以在应用关键帧之后，让你拖动整条动画.
-    1. 在NLA模式下，将动画片段的`Active Stripe`中`Blending`从`Replace`装换成`Add`模式，便可以将动画混合从而导入到Unity中(导出设置为6.X模式)
+    1. 在NLA模式下，将动画片段的`Active Stripe`中`Blending`从`Replace`装换成`Add`模式，便可以将动画混合从而导入到Unity中(导出设置为FBX 6.1 ASCII模式)
 
 
 ## 人物动画
-1. 选中所有骨骼，clear position
-2. 选中骨骼和模型，Ctrl+Shift+P链接骨骼模型
+1. 重置骨骼，clear position
+2. 在`Object`模式下先选择模型，再选择骨骼，Ctrl+Shift+P将自动链接骨骼模型
 3. 制作帧动画
 
 ### 导出人物动画
