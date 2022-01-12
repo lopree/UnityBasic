@@ -1,14 +1,10 @@
-<!-- TOC -->
-
-- 1. UGUI优化
+# 目录：
+- 1. UI优化
     - 1.1. 合理分配图集
-    - 1.2. Resources文件夹中之保存prefab文件
+    - 1.2. Resources文件夹中只保存prefab文件
 - 2. CPU优化
 - 3. GPU优化
-
-<!-- /TOC -->
-
-## 1. UGUI优化
+## 1. UI优化
 
 ### 1.1. 合理分配图集
 
@@ -19,7 +15,7 @@
 - 关卡内的UI资源不要与外围系统的UI资源混用;在关卡内,需要加载大量的角色及场景资源,内存紧张,一般在进入关卡时,都会手动释放外围系统的资源以便增加可用内存.如果战斗内的UI与外围共用的UI在一个图集内,释放将不会成功.对于这些共用的UI需要特殊处理.
 - ***删除失效的UI节点和动画,而不是disable它们***
 
-### 1.2. Resources文件夹中之保存prefab文件
+### 1.2. Resources文件夹中只保存prefab文件
 
 随着项目版本的迭代,可能会导致部分资源(动画,贴图这些非Prefab文件)失效,如果这些文件放在Resource文件夹下,在打包时,unity会将Resource目录下文件全部打包成一个大的AssetBundle包(非resource目录下的文件只有在引用倒是才会被打包),从而出现包的冗余,增加不必要的存储空间和内存占用.
 
@@ -42,18 +38,4 @@
 禁用不可见的UI，比如当打开一个系统时如果完全挡住了另外一个系统，则可以将被遮挡住的系统禁用。
 不要使用空的Image,在Unity中，RayCast使用Graphi作为基本元素来检测touch,在笔者参与的项目中，很多同学使用空的image并将alpha设置为0来接收touch事件，这样会产生不必要的overdraw。通过如下类NoDrawingRayCast来接收事件可以避免不必要的overdraw。
 
-```cs
-public class NoDrawingRayCast : Graphic
-{
-  public override void SetMaterialDirty()
-  {
-  }
-  public override void SetVerticesDirty()
-  {
-  }
-  protected override void OnFillVBO(List vbo)
-  {
-    vbo.Clear();
-  }
-}
-```
+
