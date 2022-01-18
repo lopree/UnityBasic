@@ -1,6 +1,14 @@
-<https://www.qq764424567.top/2020/08/21/u3daily_AssetsLoad.html>
 
-## 一、资源加载
+<!-- TOC -->
+
+- 1. 一、资源加载
+- 2. 二、资源卸载
+- 3. 三、文件路径
+- 4. 四、特殊文件夹
+
+<!-- /TOC -->
+
+## 1. 一、资源加载
 
 1. Resources加载
 
@@ -129,7 +137,7 @@ LoadFromMemory|从内存区异步创建资源包
 LoadFromMemoryAsync|从内存区域异步创建一个AssetBundle
 LoadFromMemoryImmediate|从内存区同步创建资源包
 
-## 二、资源卸载
+## 2. 二、资源卸载
 
 名称 | 功能|
 |:--|:--|
@@ -139,7 +147,7 @@ AssetBundle.Unload(true)|卸载AssetBundle文件内存映像，并且释放所�
 Object.DontDestroyOnLoad|标明一个对象在切换场景时不被销毁；
  GC.Collect|强制垃圾收集器立即回收内存，可以根据需要使用，比如切换画面调用或定时调用；
 
-## 三、文件路径
+## 3. 三、文件路径
 
 名称 | 功能|
 |:--|:--|
@@ -173,34 +181,35 @@ Application.dataPath | Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/xxx.app/
 |:--|:--|
 Application.dataPath | file:///D:/MyGame/WebPlayer (即导包后保存的文件夹，html文件所在文件夹)
 
-## 四、特殊文件夹
+## 4. 四、特殊文件夹
 
-1.Editor
+1. Editor
 
 Editor文件夹可以在根目录下，也可以在子目录里，只要名子叫Editor就可以。比如目录：/xxx/xxx/Editor 和 /Editor 是一样的，无论多少个叫Editor的文件夹都可以。Editor下面放的所有资源文件或者脚本文件都不会被打进发布包中，并且脚本也只能在编辑时使用。一般呢会把一些工具类的脚本放在这里，或者是一些编辑时用的DLL。 比如我们现在要做类似技能编辑器，那么编辑器的代码放在这里是再好不过了，因为实际运行时我们只需要编辑器生成的文件，而不需要编辑器的核心代码。
 
-2.Editor Default Resources
+2. Editor Default Resources
 
 Editor Default Resources注意中间是有空格的，它必须放在Project视图的根目录下，如果你想放在/xxx/xxx/Editor Default Resources 这样是不行的。你可以把编辑器用到的一些资源放在这里，比如图片、文本文件、等等。它和Editor文件夹一样都不会被打到最终发布包里，仅仅用于开发时使用。你可以直接通过EditorGUIUtility.Load去读取该文件夹下的资源。
 
-TextAsset text =  EditorGUIUtility.Load("test.txt")as TextAsset;
-Debug.Log(text.text);
+    TextAsset text =  EditorGUIUtility.Load("test.txt")as TextAsset;
+    Debug.Log(text.text);
 
-3.Gizmos
+3. Gizmos
 
 我觉得这个文件夹其实没什么用处，如下代码所示它可以在Scene视图里给某个坐标绘制一个icon。它的好处是可以传一个Vecotor3 作为图片显示的位置。 参数2就是图片的名子，当然这个图片必须放在Gizmos文件夹下面。
 
-void OnDrawGizmos() {
+    void OnDrawGizmos()
+    {
         Gizmos.DrawIcon(transform.position, "0.png", true);
     }
 
 这里还是要说说OnDrawGizmos()方法，只要脚本继承了MonoBehaviour后，并且在编辑模式下就会每一帧都执行它。发布的游戏肯定就不会执行了，它只能用于在scene视图中绘制一些小物件。比如要做摄像机轨迹，那么肯定是要在Scene视图中做一个预览的线，那么用Gizmos.DrawLine 和Gizmos.DrawFrustum就再好不过了。
 
-4.Plugins
+4. Plugins
 
 如果做手机游戏开发一般 andoird 或者 ios 要接一些sdk 可以把sdk依赖的库文件 放在这里，比如 .so .jar .a 文件。这样打完包以后就会自动把这些文件打在你的包中。
 
-5.Resources
+5. Resources
 
 可以在根目录下，也可以在子目录里，只要名子叫Resources就可以。比如目录：/xxx/xxx/Resources 和 /Resources 是一样的，无论多少个叫Resources的文件夹都可以。Resources文件夹下的资源不管你用还是不用都会被打包进.apk或者.ipa
 
@@ -212,7 +221,7 @@ AssetDatabase.LoadAssetAtPath()：它可以读取Assets目录下的任意文件�
 
 我觉得在电脑上开发的时候尽量来用Resource.Load() 或者 Resources.LoadAssetAtPath() ，假如手机上选择一部分资源要打assetbundle，一部分资源Resource.Load().那么在做.apk或者.ipa的时候 现在都是用脚本来自动化打包，在打包之前 可以用AssetDatabase.MoveAsset()把已经打包成assetbundle的原始文件从Resources文件夹下移动出去在打包，这样打出来的运行包就不会包行多余的文件了。打完包以后再把移动出去的文件夹移动回来。
 
-1. StreamingAssets
+6. StreamingAssets
 
 这个文件夹下的资源也会全都打包在.apk或者.ipa 它和Resources的区别是，Resources会压缩文件，但是它不会压缩原封不动的打包进去。并且它是一个只读的文件夹，就是程序运行时只能读 不能写。它在各个平台下的路径是不同的，不过你可以用Application.streamingAssetsPath 它会根据当前的平台选择对应的路径。
 
