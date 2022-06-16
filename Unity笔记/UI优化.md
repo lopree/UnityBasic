@@ -38,4 +38,7 @@
 禁用不可见的UI，比如当打开一个系统时如果完全挡住了另外一个系统，则可以将被遮挡住的系统禁用。
 不要使用空的Image,在Unity中，RayCast使用Graphi作为基本元素来检测touch,在笔者参与的项目中，很多同学使用空的image并将alpha设置为0来接收touch事件，这样会产生不必要的overdraw。通过如下类NoDrawingRayCast来接收事件可以避免不必要的overdraw。
 
+## 4. 工程目录
+
+
 
